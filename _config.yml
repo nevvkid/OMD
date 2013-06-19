@@ -1,23 +1,20 @@
 # ----------------------- #
 #      Main Configs       #
 # ----------------------- #
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
+name: Your New Jekyll Site
 description: 'A Jekyll theme for long-form writings, essays and beautiful photography.'
 
 
 # ----------------------- #
 #    Jekyll & Plugins     #
 # ----------------------- #
-baseurl:
+baseurl: 
 permalink: none
 markdown: rdiscount
 rdiscount:
   extensions: [smart]
 
-include:
-exclude: [".gitignore", "Gemfile", "Gemfile.lock", "README.md", 'sass', 'watch.sh', 'foo.scss', 'inuit.css'] # files to exclud
-
+exclude: [.gitignore, Gemfile, Gemfile.lock, LICENSE, Rakefile, README.md, watch.sh,]
 
 # ----------------------- #
 #   3rd Party Settings    #
