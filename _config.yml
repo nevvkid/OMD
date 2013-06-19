@@ -14,7 +14,7 @@ markdown: rdiscount
 rdiscount:
   extensions: [smart]
 
-exclude: [.gitignore, Gemfile, Gemfile.lock, LICENSE, Rakefile, README.md, watch.sh,]
+exclude: ['.gitignore', 'Gemfile', 'Gemfile.lock', 'LICENSE', 'Rakefile', 'README.md', 'watch.sh']
 
 # ----------------------- #
 #   3rd Party Settings    #
