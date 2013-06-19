@@ -1,0 +1,799 @@
+@import "queries";
+@import "fontello";
+
+// So I measured the typographic attributes of meta-serif and came up
+// with the following values.
+//
+// border-radius
+//
+// should be a multiple of 2. meta-serif has a slight softness but not
+// by much if at all on arms and serifs.
+//
+//borders
+//
+// I like to play off the weight of typographic attributes and in our
+// case the stems of glyphs. Borders should be a multiple of 16 or
+// divisible by 16.
+
+// $Compass Extends
+// ============================================================
+
+%transition {
+	@include transition(.3s all ease-in-out);
+}
+
+
+// $Global Elements
+// ============================================================
+
+* {
+	@include box-sizing(border-box);
+}
+
+html {
+	@include breakpoint(mama-bear) {
+		font-size: 100%;
+	}
+}
+
+body {
+	background: image-url("subtle_grunge.png") top left repeat;
+	color: #212121;
+}
+
+a {
+	@extend %transition;
+	text-decoration: none;
+	color: #de4d1f;
+	a:visited {
+		color: transparent;
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+p code,
+.example code {
+	// some bug with monospace things causes <code> elements to not inherit the font-size of the <html> element
+	// <code> elements inside <pre> DO inherit the proper size, for some reason, so we scope this style to the elements we need
+	font-size: 1.125em;
+	// so code doesn't wrap onto a second line in the middle of a piece of a word
+	word-wrap: normal;
+}
+
+abbr {
+	// @include smallcaps(gray, 600);
+	// ff-meta-serif has no real small caps, so we fake it
+	font-variant: normal;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	&:hover {
+		cursor: help;
+	}
+}
+
+dl {
+	margin-top: 0;
+}
+
+small {
+	font-size: 65%;
+}
+
+img {
+	max-width: 100%;
+}
+
+section {
+	padding: $line-height * 0.5em 0 $line-height * 1em;
+	@extend %rhythm;
+}
+
+.col-wrap {
+	width: 92%;
+	max-width: 40em;
+	margin: 0 auto;
+}
+
+hr {
+	border: 0;
+	height: 0;
+	padding: 0;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid hsla(0, 0%, 100%, 0.5);
+	&.fancy {
+		border-bottom: 1px solid $cobalt-fade;
+		margin: 0 0 1.65em;
+		text-align: center;
+		&:after {
+			@extend .delta;
+			background-color: #fcfcfc;
+			color: $cobalt-fade;
+			content: "§";
+			position: relative;
+			top: -0.75em;
+		}
+	}
+}
+
+// $Logo
+// ============================================================
+
+.logo {
+	vertical-align: -200%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
+	margin-right: $line-height * 1rem;
+	cursor: pointer;
+
+	@include breakpoint(papa-bear) {
+		vertical-align: -190%;
+		margin-right: 5em;
+	}
+
+	@include breakpoint(baby-bear) {
+		display: block;
+		text-align: center;
+		margin-right: 0;
+	}
+}
+
+.logo-img {
+	background: image-url("logo.png") 50% no-repeat;
+	width: 12em;
+	background-size: cover;
+
+	&:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 100%;
+	}
+
+	@include breakpoint(papa-bear) {
+		width: 12em;
+	}
+
+	@include breakpoint(baby-bear) {
+		width: 10em;
+	}
+}
+
+
+// $Header
+// ============================================================
+
+.header {
+	padding-top: 1.65em;
+	background: $white image-url("typeplate-press.png") center bottom no-repeat;
+	// break
+	@include breakpoint(baby-bear) {
+		text-align: center;
+		padding-top: 0;
+		p {
+			text-align: left;
+		}
+	}
+}
+
+.lede {
+	padding-top: 0.825em;
+	margin-bottom: 1.65em;
+	& > p:not(.no-indent) {
+		margin-top: 0;
+	}
+}
+
+
+// $Navigation
+// ============================================================
+
+.nav {
+	// in preparation for inline-block children
+	letter-spacing: -4px;
+	//@extend %rhythm;
+	display: inline-block;
+	@include breakpoint(baby-bear) {
+		padding-top: 0.825em;
+		display: block;
+		text-align: center;
+	}
+}
+
+.nav.nav-primary {
+	@media screen and (min-width: 37.5625em) and (max-width: 47.3125em) {
+		margin-top: 5em;
+	}
+}
+
+.nav-item {
+	border-bottom: 1.5px solid rgba(156, 153, 153, 0.69);
+	letter-spacing: normal;
+	display: block;
+	@extend .delta;
+	line-height: 2;
+	padding: 0 0.5em 0 0.25em;
+	margin-bottom: 0;
+	color: $rust;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		background: #f7f7f7;
+		color: #000000;
+	}
+	&:last-child {
+		border-bottom: none;
+	}
+	&:before {
+		content: "→ ";
+	}
+	// break
+	@include breakpoint(baby-bear) {
+		&:before {
+			content: "";
+		}
+		border-radius: 0.333333em;
+		display: inline-block;
+		padding: 0.825em;
+		margin-right: 0.5em;
+		font-family: Monaco, Consolas, monospace;
+		font-size: 0.825em;
+		background: $cobalt-deep;
+		color: $white;
+		&:visited {
+			color: $white;
+		}
+		&:hover,
+		&:focus {
+			background: $rust;
+			color: white;
+		}
+	}
+}
+
+.dl-item,
+.social-item {
+	display: inline-block;
+	letter-spacing: normal;
+	border-radius: 0.333333em;
+	font-family: Monaco, Consolas, monospace;
+	font-size: 0.825em;
+	text-align: center;
+}
+
+.downloads {
+	background: $cobalt-deep image-url("asfalt.png") top left repeat;
+	padding: 1.65em 0;
+	display: block;
+	.icon-download {
+		color: $white;
+	}
+}
+.dl-item {
+	@extend %transition;
+	padding: $line-height * 0.5rem;
+	width: 23%;
+	margin-right: 2%;
+	background: $cobalt-fade;
+	color: $cobalt-deep;
+	// pseudo
+	&:last-of-type {
+		margin-right: 0;
+	}
+	&:hover,
+	&:focus {
+		background: $rust;
+		color: white;
+		text-decoration: none;
+	}
+	// filesize line
+	small {
+		font-size: 80%;
+	}
+	// break
+	@include breakpoint(bigass-bear) {
+		font-size: 0.75em;
+		padding: $line-height * 0.35rem;
+	}
+	// break
+	@include breakpoint(papa-bear) {
+		font-size: 1em;
+		padding: $line-height * 0.5rem;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 1.65em;
+	}
+}
+
+.social-nav {
+	position: absolute;
+	top: 1.65em;
+	right: 1.65em;
+	// break
+	@include breakpoint(mama-bear) {
+		position: static;
+		margin-top: 0.825em;
+		margin-bottom: 0.825em;
+	}
+	// break
+	@media screen and (min-width: 31.25em) and (max-width: 37.5em) {
+		text-align: right;
+	}
+}
+
+.social-item {
+	@extend %transition;
+	margin-left: 0.825em;
+	padding: 0 0.825em 0 0;
+	background: $cobalt-fade;
+	color: $cobalt-deep;
+	i {
+		background: $cobalt-deep;
+		color: $white;
+		display: inline-block;
+		padding: 0.65em 0.5em 0.5em 0.825em;
+		margin-right: 0.825em;
+		border-top-left-radius: 0.333333em;
+		border-bottom-left-radius: 0.333333em;
+	}
+	// pseudo
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		background: $rust;
+		color: white;
+	}
+}
+
+// $Table of Contents
+// ============================================================
+
+.toc {
+	//border: 3px solid #afbac4;
+	border-radius: 0 0 6px 6px;
+	background: #d5d5d5;
+	background: rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0 6px 4px rgba(0, 0, 0, 0.37);
+	@extend %rhythm;
+}
+.toc ol {
+	list-style: decimal !important;
+	counter-reset: item;
+	padding: 0 40px;
+}
+.toc li {
+	border-bottom: 2px dotted #949494;
+	display: block;
+	@extend .zeta;
+}
+.toc ol li:before {
+	counter-increment: item;
+	color: #444;
+	font-style: normal;
+	font-family: "Cassannet", "ff-meta-serif-web-pro", serif;
+}
+
+// epic loop wizardy!
+@for $i from 1 through 4 {
+	.toc ol:nth-of-type(#{$i}) li:before {
+		content: "#{$i}." counter(item) " – ";
+	}
+}
+
+
+// $TOC Pull Down
+// ============================================================
+
+#table-of-contents {
+	h1 {
+		margin: 0;
+		padding-top: .5em;
+		text-shadow: 0 1px 0px $white;
+		color: #606060;
+		.icon-download {
+			color: #929292;
+		}
+		&::after {
+			content: "click for action";
+			display: block;
+			font-size: .5em;
+			color: scale-lightness(#EFEFEF, -35%);
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	h2 {
+		color: #6f7070;
+		text-align: center;
+		text-shadow: 0 1px 0px rgba(255,255,255,0.30);
+	}
+}
+
+#drawer {
+	padding: 1.5em 0;
+	color: white;
+	&::after {
+		border-radius: 80%;
+		box-shadow: 0 1px 4px rgba(0,0,0,0.90), 0 -2px 1px rgba(255,255,255,0.90);
+		content: "{T}";
+		display: block;
+		height: 2.5em;
+		line-height: 2.5;
+		margin: 0 auto;
+		width: 2.5em;
+		@extend .gamma;
+		text-align: center;
+		text-shadow: 0 1px 0px $white;
+		border: 4px solid #949494;
+		background: #000000;
+		color: #fbfbfb;
+	}
+}
+
+
+// $Back to Top
+// ============================================================
+
+a[href="#table-of-contents"] {
+	@extend .dl-item;
+}
+
+
+// $Example Figures
+// ============================================================
+
+.example {
+	background: transparentize($cobalt-fade, 0.5);
+	border: 1px solid $cobalt-fade;
+	box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
+	padding: $line-height * 1rem $line-height * 1rem 0;
+	margin: $line-height * 1.5rem 0 $line-height * 1rem;
+	border-radius: 0.333333em;
+	&:before {
+		content: "example:";
+		@extend .epsilon;
+		display: block;
+		font-family: "Cassannet", sans-serif;
+		background: none;
+		line-height: 0;
+		position: relative;
+		color: #212121;
+		top: -2.125em;
+		left: -1.65rem;
+	}
+}
+.example > pre {
+	margin-top: 0;
+	overflow: auto;
+	white-space: pre;
+	word-spacing: normal;
+	@extend %normal-wrap;
+}
+
+// hotfix for typographic scale example
+.example.scale-example {
+	padding: 1.65em;
+	p {
+		line-height: 1.4;
+		margin: 0;
+	}
+	.giga {
+		margin-top: -0.33em;
+	}
+}
+
+.example.no-top-pad {
+	padding-top: 0;
+	&:before {
+		top: -0.65em;
+	}
+}
+
+
+// $Section Titles
+// ============================================================
+
+// this is breakpoint baby bear
+.section-title {
+	@include modular-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+}
+
+
+// $Permalink Anchor
+// ============================================================
+
+.perma-anchor {
+	color: #444;
+	font-weight: normal;
+	position: relative;
+	top: -0.125em;
+	&:hover, &:focus {
+		color: $rust;
+	}
+}
+
+
+// $Typeplate Code Block Styles
+// ============================================================
+
+.typeplate-code-block {
+	pre {
+		font-size: 0.825em;
+		background: #021321;
+		box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
+		padding: $line-height * 1rem;
+		.no-js & {
+			overflow: auto;
+		}
+	}
+	code {
+		color: #ddd;
+	}
+	figcaption {
+		margin-bottom: 0;
+	}
+}
+
+
+// $Blockquotes -> .extract class
+// ============================================================
+
+blockquote {
+	font-style: italic;
+	@extend .epsilon;
+	// so there's no extra line separating the quote and the citation
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+	cite {
+		font-style: normal;
+		@extend %cite;
+		&:before {
+			content:"—";
+		}
+	}
+	// make more readable at narrow widths
+	@include breakpoint(baby-bear) {
+		margin: 1.5em 0.75em;
+
+		cite {
+			text-align: left;
+		}
+	}
+}
+
+
+// $Typographic Scale Demo
+// ============================================================
+
+// this is a peculiar instance because we're stacking lots of titles atop one another
+// so we manually nix the normal amount of margin below titles
+// .typographic-scale .no-indent {
+// 	margin: 0;
+// 	text-indent: 0;
+// }
+
+
+// $Ampersand Demo
+// ============================================================
+
+.amp {
+	@extend %ampersand-placeholder;
+	padding: 0;
+	margin-top: -0.5em;
+	line-height: 1;
+	@include breakpoint(baby-bear) {
+		font-size: 2em;
+	}
+	font-size: 3em;
+	text-align: center;
+}
+
+
+// $Figure Demo
+// ============================================================
+
+.example-figcaption {
+	font-style: italic;
+	font-size: 0.85em;
+	@extend %rhythm;
+	strong {
+		font-style: normal;
+	}
+}
+
+
+// $Icon Font Demo
+// ============================================================
+
+.pull-example {
+	padding-bottom: 1em;
+}
+
+
+// $Icon Font Demo
+// ============================================================
+
+.icons {
+	@extend .beta;
+	.fs1 {
+		display: inline-block;
+		&:before {
+			padding-right: .25em;
+			color: gray;
+		}
+	}
+}
+
+
+// $Stats Tab Demo
+// ============================================================
+
+.stats-tabs {
+	text-align: center;
+	a {
+		color: #000;
+	}
+	li {
+		@include breakpoint(baby-bear) {
+			margin: 0 0 1em;
+		}
+	}
+}
+
+
+// $Typekit
+// ============================================================
+/*!
+ * FF Meta Serif Web Pro
+ * The most influential sans serif of the digital revolution (FF Meta)
+ * now has a serif companion. It took three years and three designers
+ * to develop FF Meta Serif: Erik Spiekermann, Christian Schwartz and
+ * Kris Sowersby. More about FF Meta Serif Web Pro http://metaserif.com
+ */
+
+body {
+	font-weight: 400;
+	.wf-loading & {
+		//Typekit Active FOUT Loading
+		font-family: serif;
+		visibility: hidden;
+	}
+	.wf-active &,
+	.wf-inactive & {
+		font-family: "ff-meta-serif-web-pro",serif;
+		font-weight: 400;
+		visibility: visible;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+}
+
+
+// $Cassannet @font-face
+// ============================================================
+// We use a helper from our compass config for this
+// http://compass-style.org/reference/compass/css3/font_face/
+
+// Cassannet Regular
+@include font-face("Cassannet", font-files(
+	"cassannet/cassannet.eot", ///* IE9 Compat Modes */
+	"cassannet/cassannet.eot?#iefix", // IE6-IE8
+	"cassannet/cassannet.woff", // Modern Browsers
+	"cassannet/cassannet.ttf", // Safari, Android, iOS
+	"cassannet/cassannet.svg#svgFontName" // Legacy iOS
+));
+// Cassannet Bold
+// @include font-face("Cassannet Bold", font-files(
+//     "cassannet/cassannet-bold.eot", ///* IE9 Compat Modes */
+//     "cassannet/cassannet-bold.eot?#iefix", // IE6-IE8
+//     "cassannet/cassannet-bold.woff", // Modern Browsers
+//     "cassannet/cassannet-bold.ttf", // Safari, Android, iOS
+//     "cassannet/cassannet-bold.svg#svgFontName" // Legacy iOS
+// ));
+
+
+
+// $Footer
+// ============================================================
+
+.site-footer {
+	margin-top: 3em;
+	font-size: 75%;
+	a {
+		color: #de4d1f;
+	}
+}
+
+
+// $Helpers
+// ============================================================
+
+.center {
+	text-align: center;
+}
+
+.capsify {
+	text-transform: uppercase;
+	letter-spacing: 0.125rem;
+}
+
+
+// generic bottom rule class
+.botDivider {
+	border-bottom: 0.44444444rem solid $botDividerBorder;// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
+	&.bright {
+		border-bottom-color: $rust;
+	}
+}
+
+//control our vertical rhythm
+%rhythm {
+	margin-top: 0;
+	margin-bottom: $line-height * 1rem;
+}
+
+
+// $Indenting
+// ============================================================
+
+p {
+	// reset top margin, and set bottom margin equal to one unit of line-height
+	@extend %rhythm;
+}
+p.no-indent {
+	text-indent: 0;
+}
+
+
+// $Drop Cap
+// ============================================================
+
+// This selector class is not included in the actual stylsheet. We leave it for you to decide
+// when to use it. We only provide you with the @mixin. This is just an example of
+// our chosen class selector purely for demo purposes.
+.drop-cap {
+	@include dropcap($margin: 0, $padding: 0.125em 0.125em 0 0, $font-size: 6em, $lineHeight: 0.5, $font-family: Copperplate);
+}
+
+
+// $Definition Lists
+// ============================================================
+
+.lining {
+	@include definition-list-style(lining);
+}
+
+.dictionary-style {
+	@include definition-list-style(dictionary-style);
+}
+
+
+// $Helpers
+// ============================================================
+
+//Hide only visually, but have it available for screenreaders: h5bp.com/v
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+// Extends the .visuallyhidden class to allow the element to be focusable
+// when navigated to via the keyboard: h5bp.com/p
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
