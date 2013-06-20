@@ -8,13 +8,13 @@ description: 'A Jekyll theme for long-form writings, essays and beautiful photog
 # ----------------------- #
 #    Jekyll & Plugins     #
 # ----------------------- #
-baseurl: 
+baseurl: /OMD
 permalink: none
 markdown: rdiscount
 rdiscount:
   extensions: [smart]
 
-exclude: ['.gitignore', 'Gemfile', 'Gemfile.lock', 'LICENSE', 'Rakefile', 'README.md', 'watch.sh']
+exclude: ['.gitignore', 'Gemfile', 'Gemfile.lock', 'LICENSE', 'Rakefile', 'README.md', 'watch.sh', 'omd.scss', 'inuit.css', 'sass', '.DS_Store']
 
 # ----------------------- #
 #   3rd Party Settings    #
