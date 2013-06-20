@@ -22,11 +22,11 @@ layout: default
 
 			<nav class="slides-navigation">
 				{% if page.previous %}
-				<a class="prev btn" href="{{ page.previous.url }}" title="View {{ page.previous.title }}">&laquo; {{ page.previous.title }}</a>
+				<a class="prev btn" href="{{site.baseurl}}{{ page.previous.url }}" title="View {{ page.previous.title }}">&laquo; {{ page.previous.title }}</a>
 				{% endif %}
 				{% if page.previous and page.next %}
 				{% endif %}
 				{% if page.next %}
-				<a class="next btn" href="{{ page.next.url }}" title="View {{ page.next.title }}">{{ page.next.title }} &raquo;</a>
+				<a class="next btn" href="{{site.baseurl}}{{ page.next.url }}" title="View {{ page.next.title }}">{{ page.next.title }} &raquo;</a>
 				{% endif %}
 			</nav>
