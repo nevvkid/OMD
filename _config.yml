@@ -1,0 +1,77 @@
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
+name: Your New Jekyll Site
+description: 'A Jekyll theme for long-form writings, essays and beautiful photography.'
+
+
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+baseurl: /OMD
+permalink: none
+markdown: rdiscount
+rdiscount:
+  extensions: [smart]
+
+exclude: ['.gitignore', 'Gemfile', 'Gemfile.lock', 'LICENSE', 'Rakefile', 'README.md', 'watch.sh', 'omd.scss', 'inuit.css', 'sass', '.DS_Store']
+
+# ----------------------- #
+#   3rd Party Settings    #
+# ----------------------- #
+
+# prose.io template
+prose:
+  rooturl: '_posts'
+  siteurl: 'http://nevvkid.github.io/omd/'
+  relativeLinks: 'http://nevvkid.github.io/omd/links.jsonp'
+  media: '_posts/media'
+  metadata:
+    _posts:
+      - name: "category"
+        field:
+          element: "text"
+          label: "Category"
+          value: "blog"
+      - name: "layout"
+        field:
+          element: "text"
+          label: "Layout"
+          value: "blog"
+      - name: "title"
+        field:
+          element: "text"
+          label: "Title"
+          value: ""
+      - name: "splash"
+        field:
+          element: "text"
+          label: "Splash image"
+          value: ""
+    _posts/static:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "page"
+      - name: "title"
+        field:
+          element: "text"
+          label: "Title"
+          value: ""
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Permalink"
+          value: ""
+
+
+# Twitter
+twitter_user:
+twitter_tweet_button: true
+
+# Disqus Comments
+disqus_short_name: solutioniotest
+disqus_show_comment_count: false
+
+# Google Analytics
+google_analytics_tracking_id:
