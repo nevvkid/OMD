@@ -73,7 +73,7 @@ task :sync => [:check_git] do
     system "git push origin \"#{deploy_branch}\""
     puts "Pushed to origin with commit message: #{message}"
   else
-    puts "No changes to deploy - canceled"
+    puts "No changes to sync - canceled"
   end
 
   system "git checkout \"#{source_branch}\""
