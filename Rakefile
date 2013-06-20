@@ -66,7 +66,7 @@ task :sync => [:check_git] do
 
   system "bundle exec jekyll build"
   system "git checkout \"#{deploy_branch}\""
-  system "cp -r _includes/* . && cp -r _layouts/* . && cp -r _posts/* ."
+  system "cp -r _includes/* . && cp -r _layouts/* . && cp -r _posts/* . && cp -r _site/* . && rm -rf _site/"
 
   unless git_clean?
     system "git add . && git commit -m \"#{message}\""
