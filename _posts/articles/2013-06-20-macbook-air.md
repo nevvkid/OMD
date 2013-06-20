@@ -1,6 +1,6 @@
 ---
 layout: article
-published: false
+published: true
 category: articles
 title: macbook air
 splash: ""
