@@ -1,0 +1,13 @@
+_site/*
+.DS_Store
+.sass-cache
+Gemfile
+Gemfile.lock
+LICENSE
+Rakefile
+README.md
+watch.sh
+omd.scss
+inuit.css
+sass
+_plugins/*
