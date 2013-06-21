@@ -1,6 +1,6 @@
 html {
 	font-family:'Gentium Book Basic', serif;
-	color: #333;
+	color: rgb(85,85,85);
 	background-color: #333333;
 	text-shadow: 1px 1px 0 #fff;
 
@@ -83,6 +83,7 @@ blockquote p {
     text-align:right;
     list-style:none;
     margin-left:0;
+    padding: 15px 0;
 }
     .header-container nav .logo {
         text-align:left;
@@ -143,12 +144,6 @@ ul.tags {
 /* Sprite images */
 .sprite--orange-sqaure{ background-position:-16px -16px; }
 .sprite--green-circle { background-position:  0   -16px; }
-
-.omd-logo{
-    background-image:url(../images/omd-logo.jpg)
-}
-
-
 
 article.post {
     margin-top: 150px; 

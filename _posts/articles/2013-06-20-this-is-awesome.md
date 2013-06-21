@@ -2,7 +2,9 @@
 title: this is awesome
 abstract: Curabitur ac ante sit amet elit placerat luctus. Pellentesque quis tellus urna, in euismod mi. Pellentesque ultricies dictum massa, non faucibus ligula iaculis sed.
 published: true
-category: articles
+categories:
+- articles
+- chapter1
 layout: article
 
 ---
