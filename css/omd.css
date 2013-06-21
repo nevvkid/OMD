@@ -3162,6 +3162,9 @@ blockquote p {
 .sprite--green-circle {
   background-position: 0   -16px; }
 
+.omd-logo {
+  background-image: url(../images/omd-logo.jpg); }
+
 article.post {
   margin-top: 150px; }
 
