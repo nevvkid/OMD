@@ -14,3 +14,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper lacinia purus
 
 Sed facilisis felis in justo iaculis placerat. Donec venenatis suscipit metus congue sodales. Sed suscipit lorem sit amet ipsum condimentum vitae mattis dui lobortis. Etiam quis tortor nulla. Sed id quam non arcu eleifend tempor. Fusce tincidunt condimentum nisl, vitae laoreet lorem rhoncus eget. Nunc nec libero mi, vel posuere mauris. In neque arcu, rutrum sed consectetur at, lobortis nec mauris.
 
+<ul class="posts categories">
+	<h3 class="muted">Chapter1</h3>
+	{% for post in site.categories.chapter1 %}
+		<li>
+			<a href="{{site.baseurl}}{{ post.url }}">
+				<h2>{{ post.title }}</h2>
+				<time class="inline">{{ post.date | date_to_string }}</time>
+			</a>
+		</li>
+	{% endfor %}
+	<h3 class="muted">Chapter2</h3>
+	{% for post in site.categories.chapter2 %}
+		<li>
+			<a href="{{site.baseurl}}{{ post.url }}">
+				<h2>{{ post.title }}</h2>
+				<time class="inline">{{ post.date | date_to_string }}</time>
+			</a>
+		</li>
+	{% endfor %}
+</ul>
