@@ -10,6 +10,20 @@
         <meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <!--
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          OMD - 1.0.0
+          Jekyll Theme
+          https://github.com/nevvkid
+          Theme by: nevvkid - http://www.solution.io - @nevvkid 
+          _____________  __________ 
+          __  __ \__   |/  /__  __ \
+          _  / / /_  /|_/ /__  / / /
+          / /_/ /_  /  / / _  /_/ / 
+          \____/ /_/  /_/  /_____/ 
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        -->
+
         {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
         <link rel="canonical" href="{{ canonical }}">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{site.baseurl}}/ico/apple-touch-icon-144-precomposed.png">
