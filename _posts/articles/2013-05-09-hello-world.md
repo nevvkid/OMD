@@ -6,6 +6,10 @@ categories:
 - articles
 - chapter2
 layout: article
+tags: 
+- open
+- hardware
+- design
 
 ---
 
