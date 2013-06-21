@@ -3108,7 +3108,8 @@ blockquote p {
   z-index: 1100;
   width: 100%;
   background-color: #fff;
-  padding: 26px; }
+  padding: 26px;
+  overflow-y: scroll; }
 
 .search-container form {
   margin-top: 100px; }
