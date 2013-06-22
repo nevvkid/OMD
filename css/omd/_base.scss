@@ -1,22 +1,33 @@
 html {
-	font-family:'Gentium Book Basic', serif;
-	color: rgb(85,85,85);
-	background-color: #333333;
+	font-family: 'Merriweather', serif;
+	color: #4d4d4d;
+	background-color: #fdfdfd;
 	text-shadow: 1px 1px 0 #fff;
 
  	@include media-query(palm){
         font-size: 100%!important;
+        h1#title a.full {
+            display: none;
+        }
+        h1#title a.small {
+            display: inline-block;
+        }
     }   
 
     @include media-query(lap){
         font-size: 112.5%!important;
+        h1#title a.full {
+            display: block;
+        }
+    }
+
+    @include media-query(lap-and-up){
+        h1#title a.small {
+            display: none;
+        }
     }
 
     /*
-    @include media-query(lap-and-up){
-        font-size: 112,5%;
-    }
-
     @include media-query(portable){
         font-size: 125%;
 
@@ -30,6 +41,11 @@ html {
     @include media-query(desk-wide){
         font-size: 150%!important;
     }
+}
+
+
+.page-container {
+    height:100%;
 }
 
 .wrapper{
@@ -83,12 +99,22 @@ blockquote p {
     text-align:right;
     list-style:none;
     margin-left:0;
-    padding: 15px 0;
 }
-    .header-container nav .logo {
+    .header-container nav h1#title {
         text-align:left;
         float:left;
         clear:left;
+        margin: 0;
+        padding: 15px 0;
+    }
+    .header-container nav h1#title a {
+        color: #191919;
+        text-decoration: none;
+    }
+    .header-container nav h1#title a:hover {
+        color: #000000;
+        text-decoration: none;
+        border-bottom: 3px solid #000000;
     }
 
 .search-container {
@@ -126,10 +152,30 @@ ul.tags {
 
 .main-container {
     background-color: #fdfdfd;
-}   
+}
 
+.main-container-center {
+    position: absolute;
+    background: #3ba2cf url('http://www.teehanlax.com/resources/img/story/teehan-lax/hero-bg.jpg');
+    top: 0px;
+    bottom: 100px;
+    left: 0;
+    right: 0; 
+    padding-top: 66px;
+    overflow: hidden;
+}
+
+.tagline-container {
+    position: absolute;
+    background-color: #fff;
+    bottom:0;
+    right:0;
+    left:0;
+    height:100px;
+}
+  
 .footer-container {
-    background-color: #333333;
+    background-color: #333;
 }
 
 *{

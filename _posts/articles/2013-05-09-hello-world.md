@@ -1,6 +1,7 @@
 ---
+
 title: The lorem ipsum
-abstract: Curabitur ac ante sit amet elit placerat luctus. Pellentesque quis tellus urna, in euismod mi. Pellentesque ultricies dictum massa, non faucibus ligula iaculis sed.
+abstract:
 published: true
 categories:
 - articles
@@ -10,12 +11,15 @@ tags:
 - open
 - hardware
 - design
+splash: "http://placehold.it/2500x500"
 
 ---
 
 # Learning to design is learning to see, an adventure that gets more and more captivating the further you go. A love letter to my profession…
 
-There’s always something special about the top crop of Dutch design graduates, but every once in a while one comes along that makes everyone sit up and take notice. In 2003, that was Joris Laarman. His Reinventing Functionality project at the Design Academy of Eindhoven [^1] fused function with ornament and was snatched up by Museum Boijmans [^2] Van Beuningen in Rotterdam.
+There’s always something special about the top crop of Dutch design graduates, but every once in a while one comes along that makes everyone sit up and take notice. In 2003, that was Joris Laarman. <!--more-->His Reinventing Functionality project at the Design Academy of Eindhoven [^1] fused function with ornament and was snatched up by Museum Boijmans [^2] Van Beuningen in Rotterdam. semper
+
+
 > Design must accept some of the responsibility for creating many of the world’s current problems.
 
 Since then, he has earned a reputation for himself as a designer with visionary ideas and a concern for societal issues. His first project out of school, the Bone Furniture range, was exhibited in the Friedman Benda gallery in New York, a limited edition series made from marble, porcelain and resin. While he calls it an “annoying coincidence” that much of his work has spawned major contemporary trends, it also testifies to its relevance to the issues that matter.
@@ -114,8 +118,6 @@ I get 10 times more traffic from [Google][] than from
 
 > What I’d like to be able to do is provide open source versions of my work for everyone.
 
-An image: ![gras](http://placekitten.com/300/200){:class="test"}
-
 This is some text not written in HTML but in another language!
 
 *[another language]: It's called Markdown
@@ -123,8 +125,6 @@ This is some text not written in HTML but in another language!
 
 [^1]: And here is the definition.
 [^2]: And here is the definition.
-
-    > With a quote!
 
 [google]: http://google.com/        "Google"
 [yahoo]:  http://search.yahoo.com/  "Yahoo Search"
