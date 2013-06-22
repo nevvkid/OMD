@@ -4,17 +4,25 @@
 name: Your New Jekyll Site
 description: 'A Jekyll theme for long-form writings, essays and beautiful photography.'
 
-
 # ----------------------- #
 #    Jekyll & Plugins     #
 # ----------------------- #
 baseurl: /OMD
 permalink: none
-markdown: rdiscount
-rdiscount:
-  extensions: [smart]
+future:      true
+pygments:    true
+markdown:    kramdown
 
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false 
+
+include: []
 exclude: ['.gitignore', 'Gemfile', 'Gemfile.lock', 'LICENSE', 'Rakefile', 'README.md', 'watch.sh', 'omd.scss', 'inuit.css', 'sass', '.DS_Store']
+lunr_excludes: ['.gitignore', 'Gemfile', 'Gemfile.lock', 'LICENSE', 'Rakefile', 'README.md', 'watch.sh', 'omd.scss', 'inuit.css', 'sass', '.DS_Store']
 
 # ----------------------- #
 #   3rd Party Settings    #
