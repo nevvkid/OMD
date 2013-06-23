@@ -33,7 +33,7 @@ prose:
   rooturl: '_posts'
   siteurl: 'http://nevvkid.github.io/omd/'
   relativeLinks: 'http://nevvkid.github.io/omd/links.jsonp'
-  media: '_posts/media'
+  media: 'media'
   metadata:
     _posts:
       - name: "category"
