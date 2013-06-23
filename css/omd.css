@@ -792,7 +792,7 @@ textarea:focus {
  * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
  * and over in your markup.
  */
-.cf:after {
+.cf:after, .nav:after {
   content: "";
   display: table;
   clear: both; }
@@ -1650,6 +1650,120 @@ label,
   -ms-column-count: 5;
   -o-column-count: 5;
   column-count: 5; }
+
+/*------------------------------------*\
+    $NAV
+\*------------------------------------*/
+/**
+ * Nav abstraction as per: csswizardry.com/2011/09/the-nav-abstraction
+ * When used on an `ol` or `ul`, this class throws the list into horizontal mode
+ * e.g.:
+ *
+   <ul class=nav>
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ * Demo: jsfiddle.net/inuitcss/Vnph4
+ *
+ */
+.nav {
+  list-style: none;
+  margin-left: 0; }
+  .nav > li,
+  .nav > li > a {
+    display: inline-block;
+    *display: inline;
+    zoom: 1; }
+
+/**
+ * `.nav--stacked` extends `.nav` and throws the list into vertical mode, e.g.:
+ *
+   <ul class="nav  nav--stacked">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+.nav--stacked > li {
+  display: list-item; }
+  .nav--stacked > li > a {
+    display: block; }
+
+/**
+ * `.nav--banner` extends `.nav` and centres the list, e.g.:
+ *
+   <ul class="nav  nav--banner">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+.nav--banner {
+  text-align: center; }
+
+/**
+ * Give nav links a big, blocky hit area. Extends `.nav`, e.g.:
+ *
+   <ul class="nav  nav--block">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+.nav--block {
+  line-height: 1;
+  /**
+   * Remove whitespace caused by `inline-block`.
+   */
+  letter-spacing: -0.31em;
+  word-spacing: -0.43em;
+  white-space: nowrap; }
+  .nav--block > li {
+    letter-spacing: normal;
+    word-spacing: normal; }
+    .nav--block > li > a {
+      padding: 13px; }
+
+/**
+ * Force a nav to occupy 100% of the available width of its parent. Extends
+ * `.nav`, e.g.:
+ *
+   <ul class="nav  nav--fit">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ * Thanks to @pimpl for this idea!
+ */
+.nav--fit {
+  display: table;
+  width: 100%; }
+  .nav--fit > li {
+    display: table-cell; }
+    .nav--fit > li > a {
+      display: block; }
+
+/**
+ * Make a list of keywords. Extends `.nav`, e.g.:
+ *
+   `<ul class="nav  nav--keywords>`
+ *
+ */
+.nav--keywords > li:after {
+  content: "\002C" "\00A0"; }
+.nav--keywords > li:last-child:after {
+  display: none; }
 
 /*------------------------------------*\
     $SPRITE
@@ -3079,9 +3193,31 @@ h1, h2, h3, h4, h5, h6 {
 p {
   font-weight: 400; }
 
+a, a:hover {
+  text-decoration: none;
+  color: #f55041; }
+
+a:hover {
+  color: #9c1308; }
+
 blockquote p {
   font-style: italic;
-  font-weight: 700; }
+  font-weight: 700;
+  padding-left: 26px;
+  border-left: 0.4rem solid #fd6651; }
+
+.footnotes {
+  padding: 1.5em 0 0 0;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.875em;
+  border-top: 0.063rem solid rgba(0, 0, 0, 0.25); }
+
+.footnotes ol {
+  margin-left: 26px;
+  margin-left: 1.625rem; }
+
+.nav--keywords > li:first-child:after {
+  display: none; }
 
 .header-container {
   position: fixed;
@@ -3132,34 +3268,36 @@ blockquote p {
 .search-container form {
   margin-top: 100px; }
 
-@media only screen and (max-width: 479px) {
-  ul.tags {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    -ms-column-count: 2;
-    -o-column-count: 2;
-    column-count: 2; } }
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  ul.tags {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    -ms-column-count: 3;
-    -o-column-count: 3;
-    column-count: 3; } }
-@media only screen and (min-width: 768px) {
-  ul.tags {
-    -webkit-column-count: 4;
-    -moz-column-count: 4;
-    -ms-column-count: 4;
-    -o-column-count: 4;
-    column-count: 4; } }
-@media only screen and (min-width: 1192px) {
-  ul.tags {
-    -webkit-column-count: 5;
-    -moz-column-count: 5;
-    -ms-column-count: 5;
-    -o-column-count: 5;
-    column-count: 5; } }
+ul.tags {
+  margin: 0; }
+  @media only screen and (max-width: 479px) {
+    ul.tags {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      -ms-column-count: 2;
+      -o-column-count: 2;
+      column-count: 2; } }
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    ul.tags {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      -ms-column-count: 3;
+      -o-column-count: 3;
+      column-count: 3; } }
+  @media only screen and (min-width: 768px) {
+    ul.tags {
+      -webkit-column-count: 4;
+      -moz-column-count: 4;
+      -ms-column-count: 4;
+      -o-column-count: 4;
+      column-count: 4; } }
+  @media only screen and (min-width: 1192px) {
+    ul.tags {
+      -webkit-column-count: 5;
+      -moz-column-count: 5;
+      -ms-column-count: 5;
+      -o-column-count: 5;
+      column-count: 5; } }
 
 .main-container {
   background-color: #fdfdfd; }

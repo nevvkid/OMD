@@ -77,9 +77,42 @@ p {
 	font-weight: 400;
 }
 
+a, a:hover {
+    text-decoration: none;
+    color: #f55041;
+}
+
+a:hover {
+    color: #9c1308;
+}
+
 blockquote p { 
 	font-style: italic;
     font-weight: 700;
+    padding-left: $base-spacing-unit;
+    border-left: 0.4rem solid #fd6651;
+}
+
+.footnotes {
+padding: 1.5em 0 0 0;
+color: rgba(0,0,0,0.5);
+font-size: 0.875em;
+border-top: 0.063rem solid rgba(0, 0, 0, 0.25);
+}
+
+.footnotes ol {
+    margin-left: $base-spacing-unit;
+    margin-left:($base-spacing-unit / $base-font-size)*1rem;
+}
+
+.nav--keywords{
+
+    > li{
+
+        &:first-child:after{
+            display:none;
+        }
+    }
 }
 
 .header-container {
@@ -146,7 +179,8 @@ ul.tags {
     } 
     @include media-query(desk-wide){
         @extend %text-cols; @include vendor(column-count, 5);
-    }   
+    }
+    margin: 0;   
 }
 
 
