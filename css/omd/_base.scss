@@ -238,20 +238,44 @@ article.post {
   z-index: 1000;
   top: 46%;
   width: 100%;
+  text-align: center;
     @include media-query(palm){
-        display: hidden;
-        opacity: 0;
-    } 
+            position: static;
+            top: 0;
+            height: auto;
+            margin: 0 0 80px 0;
+            border-top: 0.063rem solid rgba(0, 0, 0, 0.25);
+    }
   a {
     position: absolute;
     display: block;
+    background-color: rgba(0, 0, 0, 0.1);
+    @include media-query(palm){background-color: transparent;}
     &.prev {
       left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
     &.next {
-      right: 0;
+        right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    &:hover {
+      
     }
   }
+  p.prev-next-text {
+    display: none;
+    @include media-query(palm){
+        position: absolute;
+        display: block;
+        padding-top: 10px;
+        width: 100px;
+        left: 50%;
+        right: 50%;
+        margin-left: -50px;
+        }
+    }
 }
-
 
