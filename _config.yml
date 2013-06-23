@@ -31,8 +31,8 @@ lunr_excludes: ['.gitignore', 'Gemfile', 'Gemfile.lock', 'LICENSE', 'Rakefile', 
 # prose.io template
 prose:
   rooturl: '_posts'
-  siteurl: 'http://nevvkid.github.io/omd/'
-  relativeLinks: 'http://nevvkid.github.io/omd/links.jsonp'
+  siteurl: 'http://nevvkid.github.io/OMD/'
+  relativeLinks: 'http://nevvkid.github.io/OMD/links.jsonp'
   media: 'media'
   metadata:
     _posts:
