@@ -18,13 +18,18 @@ layout: default
 						<div class="grid--center">
 						    <div class="grid__item one-whole lap-eight-twelfths desk-eight-twelfths desk-wide-nine-twelfths">
 								<article class="post">
-								  <h1 class="post_title">{{page.title}}</h1>
-								  <!--<h3>{{ page.date | date_to_long_string }} &bull; <span class="reading_time">{{ page.content | number_of_words | divided_by: 200 }}</span> min. read</h3>-->
-								  {{ content }}
+									<h1 class="post_title beta">{{page.copytitle}}</h1>
+								<!--
+									<h1 class="post_title">{{page.title}}</h1>
+									<h3>{{ page.date | date_to_long_string }} &bull; <span class="reading_time">{{ page.content | number_of_words | divided_by: 200 }}</span> min. read</h3>
+								-->
+									{{ content }}
 								</article>
-								<ul class="tag_list">
+								{{ page.date | date: "%B %d, %Y" }}
+								<ul class="nav  nav--keywords">
+									<li>Tagged:</li>
 									{% for tag in page.tags %}
-									<li class="inline archive_list"><a class="tag_list_link" href="{{site.baseurl}}/tag/{{ tag }}/">{{ tag }}</a></li>
+									<li><a href="{{site.baseurl}}/tag/{{ tag }}/">{{ tag }}</a></li>
 									{% endfor %}
 								</ul>
 							</div>
@@ -36,12 +41,12 @@ layout: default
 
 			<nav class="slides-navigation">
 				{% if page.previous %}
-				<a class="prev btn" href="{{site.baseurl}}{{ page.previous.url }}" title="View {{ page.previous.title }}">&lsaquo; {{ page.previous.title }}</a>
+				<a class="prev btn" href="{{site.baseurl}}{{ page.previous.url }}" title="View {{ page.previous.title }}">&larr; <!--{{ page.previous.title }}--></a>
 				{% endif %}
 				{% if page.previous and page.next %}
 				{% endif %}
 				{% if page.next %}
-				<a class="next btn" href="{{site.baseurl}}{{ page.next.url }}" title="View {{ page.next.title }}">{{ page.next.title }} &rsaquo;</a>
+				<a class="next btn" href="{{site.baseurl}}{{ page.next.url }}" title="View {{ page.next.title }}"><!--{{ page.next.title }}--> &rarr;</a>
 				{% endif %}
 			</nav>
 
