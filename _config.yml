@@ -7,11 +7,11 @@ description: 'A Jekyll theme for long-form writings, essays and beautiful photog
 # ----------------------- #
 #    Jekyll & Plugins     #
 # ----------------------- #
-baseurl: /OMD
-permalink: none
-future:      true
-pygments:    true
-markdown:    kramdown
+baseurl:    /OMD
+permalink:  none
+future:     true
+pygments:   true
+markdown:   kramdown
 
 kramdown:
   auto_ids: true
@@ -33,7 +33,7 @@ prose:
   rooturl: '_posts'
   siteurl: 'http://nevvkid.github.io/omd/'
   relativeLinks: 'http://nevvkid.github.io/omd/links.jsonp'
-  media: '_posts/media'
+  media: 'media'
   metadata:
     _posts:
       - name: "category"
