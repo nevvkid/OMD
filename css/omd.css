@@ -3133,6 +3133,11 @@ label,
 /**
  * She’s all yours, cap’n... Begin importing your stuff here.
  */
+* {
+  -webkit-transition: 0.2s width;
+  -moz-transition: 0.2s width;
+  transition: 0.2s width; }
+
 html {
   font-family: 'Merriweather', serif;
   color: #4d4d4d;
@@ -3186,38 +3191,6 @@ html {
 
 .grid--center .grid__item {
   text-align: left; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans', sans-serif; }
-
-p {
-  font-weight: 400; }
-
-a, a:hover {
-  text-decoration: none;
-  color: #f55041; }
-
-a:hover {
-  color: #9c1308; }
-
-blockquote p {
-  font-style: italic;
-  font-weight: 700;
-  padding-left: 26px;
-  border-left: 0.4rem solid #fd6651; }
-
-.footnotes {
-  padding: 1.5em 0 0 0;
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 0.875em;
-  border-top: 0.063rem solid rgba(0, 0, 0, 0.25); }
-
-.footnotes ol {
-  margin-left: 26px;
-  margin-left: 1.625rem; }
-
-.nav--keywords > li:first-child:after {
-  display: none; }
 
 .header-container {
   position: fixed;
@@ -3284,6 +3257,54 @@ blockquote p {
   vertical-align: middle;
   margin-top: 5rem; }
 
+.main-container {
+  background-color: #fdfdfd; }
+
+.main-container-center {
+  position: absolute;
+  background: #3ba2cf url("http://www.teehanlax.com/resources/img/story/teehan-lax/hero-bg.jpg");
+  top: 0px;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  padding-top: 66px;
+  overflow: hidden; }
+
+article.post {
+  margin-top: 150px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif; }
+
+p {
+  font-weight: 400; }
+
+a, a:hover {
+  text-decoration: none;
+  color: #f55041; }
+
+a:hover {
+  color: #9c1308; }
+
+blockquote p {
+  font-style: italic;
+  font-weight: 700;
+  padding-left: 26px;
+  border-left: 0.4rem solid #fd6651; }
+
+.footnotes {
+  padding: 1.5em 0 0 0;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.875em;
+  border-top: 0.063rem solid rgba(0, 0, 0, 0.25); }
+
+.footnotes ol {
+  margin-left: 26px;
+  margin-left: 1.625rem; }
+
+.nav--keywords > li:first-child:after {
+  display: none; }
+
 ul.tags {
   margin: 0; }
   @media only screen and (max-width: 479px) {
@@ -3315,19 +3336,6 @@ ul.tags {
       -o-column-count: 5;
       column-count: 5; } }
 
-.main-container {
-  background-color: #fdfdfd; }
-
-.main-container-center {
-  position: absolute;
-  background: #3ba2cf url("http://www.teehanlax.com/resources/img/story/teehan-lax/hero-bg.jpg");
-  top: 0px;
-  bottom: 100px;
-  left: 0;
-  right: 0;
-  padding-top: 66px;
-  overflow: hidden; }
-
 .tagline-container {
   position: absolute;
   background-color: #fff;
@@ -3338,14 +3346,6 @@ ul.tags {
 
 .footer-container {
   background-color: #333; }
-
-* {
-  -webkit-transition: 0.2s width;
-  -moz-transition: 0.2s width;
-  transition: 0.2s width; }
-
-article.post {
-  margin-top: 150px; }
 
 .slides-navigation {
   margin: 0 auto;
