@@ -46,8 +46,8 @@
 
         <script>
             $(document).ready(function () {
-                $("a.hamburger").click(function () {
-                    $("div.search-container").toggle();
+                $("a.hamburg").click(function () {
+                    $("div.toc-").toggle();
                 });
             });
             $(function() {
@@ -58,6 +58,8 @@
                 template: '#search-results-template'  // jQuery selector for the Mustache.js template
               });
             });
+            var header,menu,menuButton;$(document).ready(function(){header=$(".header-container");menu=$(".toc-container");menuButton=$(".hamburger");menuButton.click(showMenu);})
+function showMenu(event){menu.toggleClass("open");header.toggleClass("open");menuButton.toggleClass("open");}
         </script>
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,800italic,400,800' rel='stylesheet' type='text/css'>

@@ -1,12 +1,12 @@
 ---
-title: Flexible Foundations
+title: Concepts
 subtitle: 
 copytitle: Responsive or not, there’s no reason why we shouldn’t all be designing and building sites on flexible foundations.
 abstract:
 published: true
 categories:
 - articles
-- chapter3
+- chapter1
 layout: article
 tags: 
 - open
