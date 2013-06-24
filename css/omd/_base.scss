@@ -1,0 +1,279 @@
+html {
+	font-family: 'Merriweather', serif;
+	color: #4d4d4d;
+	background-color: #fdfdfd;
+	text-shadow: 1px 1px 0 #fff;
+
+ 	@include media-query(palm){
+        font-size: 100%!important;
+        h1#title a.full {
+            display: none;
+        }
+        h1#title a.small {
+            display: inline-block;
+        }
+    }   
+
+    @include media-query(lap){
+        font-size: 112.5%!important;
+        h1#title a.full {
+            display: block;
+        }
+    }
+
+    @include media-query(lap-and-up){
+        h1#title a.small {
+            display: none;
+        }
+    }
+
+    /*
+    @include media-query(portable){
+        font-size: 125%;
+
+    }
+    */
+
+    @include media-query(desk){
+        font-size: 125%!important;
+    }
+
+    @include media-query(desk-wide){
+        font-size: 150%!important;
+    }
+}
+
+
+.page-container {
+    height:100%;
+}
+
+.wrapper{
+    max-width:1200px;
+    margin-right:auto;
+    margin-left: auto;
+        @include media-query(palm){
+            padding-right:$base-spacing-unit;
+            padding-left:$base-spacing-unit;
+    }  
+}
+
+.grid--center {
+    max-width:1200px;
+    margin-right:auto;
+    margin-left: auto;
+    text-align: center;
+}
+    .grid--center .grid__item {
+        text-align: left;
+    }
+
+
+h1,h2,h3,h4,h5,h6{
+    font-family:'Open Sans', sans-serif;
+}
+
+p {
+	font-weight: 400;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: #f55041;
+}
+
+a:hover {
+    color: #9c1308;
+}
+
+blockquote p { 
+	font-style: italic;
+    font-weight: 700;
+    padding-left: $base-spacing-unit;
+    border-left: 0.4rem solid #fd6651;
+}
+
+.footnotes {
+padding: 1.5em 0 0 0;
+color: rgba(0,0,0,0.5);
+font-size: 0.875em;
+border-top: 0.063rem solid rgba(0, 0, 0, 0.25);
+}
+
+.footnotes ol {
+    margin-left: $base-spacing-unit;
+    margin-left:($base-spacing-unit / $base-font-size)*1rem;
+}
+
+.nav--keywords{
+
+    > li{
+
+        &:first-child:after{
+            display:none;
+        }
+    }
+}
+
+.header-container {
+    position: fixed;
+    opacity: 0.95;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #f1f1f1;
+    height: 66px;
+    max-height: 100%;
+    overflow-y: auto;
+}
+.header-container.open {
+    height: 100%;
+}
+
+/* adapted split method >maybe use it later */
+.header-container {
+    text-align:right;
+    list-style:none;
+    margin-left:0;
+}
+
+.header-container .hamburger i.icon-menu {
+    display: block;
+}
+.header-container.open .hamburger i.icon-menu {
+    display: none;
+}
+.header-container .hamburger i.icon-cancel {
+    display: none;
+}
+.header-container.open .hamburger i.icon-cancel {
+    display: block;
+}
+    .header-container h1#title {
+        text-align:left;
+        float:left;
+        clear:left;
+        margin: 0;
+        padding: 15px 0;
+    }
+    .header-container a {
+        color: #191919;
+        text-decoration: none;
+    }
+    .header-container h1#title a {
+        color: #191919;
+        text-decoration: none;
+    }
+    .header-container h1#title a:hover {
+        color: #000000;
+        text-decoration: none;
+        border-bottom: 3px solid #000000;
+    }
+
+.header-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+.toc-container {
+    display: none;
+}
+.toc-container.open {
+    display: block;
+    vertical-align: middle;
+    margin-top: 5rem;
+}
+
+
+ul.tags {
+    @include media-query(palm){
+        @extend %text-cols; @include vendor(column-count, 2);
+    } 
+    @include media-query(lap){
+        @extend %text-cols; @include vendor(column-count, 3);
+    }  
+    @include media-query(desk){
+        @extend %text-cols; @include vendor(column-count, 4);
+    } 
+    @include media-query(desk-wide){
+        @extend %text-cols; @include vendor(column-count, 5);
+    }
+    margin: 0;   
+}
+
+
+.main-container {
+    background-color: #fdfdfd;
+}
+
+.main-container-center {
+    position: absolute;
+    background: #3ba2cf url('http://www.teehanlax.com/resources/img/story/teehan-lax/hero-bg.jpg');
+    top: 0px;
+    bottom: 100px;
+    left: 0;
+    right: 0; 
+    padding-top: 66px;
+    overflow: hidden;
+}
+
+.tagline-container {
+    position: absolute;
+    background-color: #fff;
+    bottom:0;
+    right:0;
+    left:0;
+    height:100px;
+}
+  
+.footer-container {
+    background-color: #333;
+}
+
+*{
+    -webkit-transition:0.2s width;
+       -moz-transition:0.2s width;
+            transition:0.2s width;
+}
+
+article.post {
+    margin-top: 150px; 
+}
+
+
+// Optional
+.slides-navigation {
+  margin: 0 auto;
+  position: fixed;
+  z-index: 83;
+  top: 46%;
+  width: 100%;
+  text-align: center;
+    @include media-query(palm){
+            position: static;
+            top: 0;
+            height: auto;
+            margin: 0 0 80px 0;
+            border-top: 0.063rem solid rgba(0, 0, 0, 0.25);
+    }
+  a {
+    position: absolute;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.1);
+    @include media-query(palm){background-color: transparent;}
+    &.prev {
+      left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &.next {
+        right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    &:hover {
+      
+    }
+  }
+}
+
