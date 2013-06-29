@@ -75,11 +75,11 @@ html {
 
 .header-container {
     position: fixed;
-    opacity: 0.95;
+    opacity: 1;
     top: 0;
     z-index: 100;
     width: 100%;
-    background-color: #fff;
+    background-color: #fdfdfd;
     border-bottom: 1px solid #f1f1f1;
     height: 66px;
     max-height: 100%;
@@ -87,6 +87,7 @@ html {
 }
 .header-container.open {
     height: 100%;
+    opacity: 0.95;
 }
 
 /* adapted split method >maybe use it later */
@@ -143,7 +144,7 @@ html {
 }
 
 .main-container {
-    background-color: #fdfdfd;
+    background-color: transparent;
 }
 
 .main-container-center {
@@ -254,7 +255,6 @@ ul.tags {
   a {
     position: absolute;
     display: block;
-    background-color: rgba(0, 0, 0, 0.1);
     @include media-query(palm){background-color: transparent;}
     &.prev {
       left: 0;
