@@ -1,20 +1,22 @@
 ---
 title: Concepts
-subtitle: 
-copytitle: Responsive or not, there’s no reason why we shouldn’t all be designing and building sites on flexible foundations.
-abstract:
+subtitle: null
+copytitle: "Responsive or not, there’s no reason why we shouldn’t all be designing and building sites on flexible foundations."
+abstract: null
 published: true
-categories:
-- articles
-- chapter1
+categories: 
+  - articles
+  - chapter1
 layout: article
 tags: 
-- open
-- hardware
-- design
-splash:
-
+  - open
+  - hardware
+  - design
+splash: null
+category: blog
 ---
+
+![2014-08-06 16.36.22.png](/_posts/articles/2014-08-06 16.36.22.png)
 
 This concept is nothing new, having been prophetically outlined in Jon Allsopp’s 2000 article, [A Dao of Web Design](http://www.alistapart.com/articles/dao/). Sadly, I’m able to count myself among the many who, until recently, have failed to see the benefits of embracing the inherent flexibility of the web. [Andy Hume](http://blog.andyhume.net/responsive-by-default/) states it well:
 
@@ -44,3 +46,4 @@ The sites we’ve built to display on a desktop, smartphone, or a tablet today c
 
 [^1]: Style sheets that use [relative units](http://www.w3.org/TR/css3-values/#relative-lengths) can more easily scale from one output environment to another. Most of the time I use em and rem.
 [^2]: I’m sure there are occasional exceptions.
+
